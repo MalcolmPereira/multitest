@@ -19,7 +19,7 @@ The build artifacts will be stored in the 'dist' directory.
 
 Run 'npm run package' to package the project as single js file which can be started with node <js file>.
 
-The packaged artifacts will be stored in the 'build` directory.
+The packaged artifacts will be stored in the 'build' directory.
 
 ## Running unit tests
 
