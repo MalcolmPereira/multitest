@@ -1,6 +1,6 @@
 # Multitest-API
 
-Simple Node Implementation for Rest API supporting multiple generated tests. 
+Simple Node Implementation for Rest API supporting multiple generated tests.
 Currently supported tests:
    - mutlipy (Generates and Validates Multiplication Questions).
 
@@ -13,7 +13,7 @@ The app will automatically reload if you change any of the source files.
 ## Build
 Run 'npm run build' to build the project.
 
-The build artifacts will be stored in the 'dist` directory.
+The build artifacts will be stored in the 'dist' directory.
 
 ## Package
 
