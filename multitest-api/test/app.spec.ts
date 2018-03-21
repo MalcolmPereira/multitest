@@ -12,11 +12,46 @@ describe("app", () => {
       .expect("Content-Type", /json/)
       .expect(200)
       .expect(function(res){
-          console.log(res.body);
           expect(res.body.multiple).equal(2);
           expect(res.body.userName).equal("someuser");
           expect(res.body.totalQuestions).equal(10);
           expect(res.body.questions.length).equal(10);
+          res.body.questions.forEach((question) => {
+              expect(question.multiple).equal(2);
+              expect(question.userAnswer).equal(0);
+              expect(question.correctAnswer).equal(0);
+          });
+      })
+  );
+
+  it("Get Multiply Less Than 10", () =>
+    supertest(app)
+      .get("/multiply?name=someuser&multiple=2&totalQuestions=5")
+      .expect("Content-Type", /json/)
+      .expect(200)
+      .expect(function(res){
+          expect(res.body.multiple).equal(2);
+          expect(res.body.userName).equal("someuser");
+          expect(res.body.totalQuestions).equal(10);
+          expect(res.body.questions.length).equal(10);
+          res.body.questions.forEach((question) => {
+              expect(question.multiple).equal(2);
+              expect(question.userAnswer).equal(0);
+              expect(question.correctAnswer).equal(0);
+          });
+      })
+  );
+
+  it("Get Multiply Greater Than 50", () =>
+    supertest(app)
+      .get("/multiply?name=someuser&multiple=2&totalQuestions=100")
+      .expect("Content-Type", /json/)
+      .expect(200)
+      .expect(function(res){
+          expect(res.body.multiple).equal(2);
+          expect(res.body.userName).equal("someuser");
+          expect(res.body.totalQuestions).equal(50);
+          expect(res.body.questions.length).equal(50);
           res.body.questions.forEach((question) => {
               expect(question.multiple).equal(2);
               expect(question.userAnswer).equal(0);

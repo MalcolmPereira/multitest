@@ -7,6 +7,9 @@ export class MultiTest {
         if (totalQuestions < 10) {
             totalQuestions = 10;
         }
+        if (totalQuestions > 50) {
+          totalQuestions = 50;
+        }
         let counter: number = totalQuestions;
         const max: number = totalQuestions;
         const min: number = 1;
