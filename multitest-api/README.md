@@ -1,6 +1,7 @@
 # Multitest-API
 
-Simple Node Implementation for Rest API supporting multiple tests
+Simple Node Implementation for Rest API supporting multiple generated tests. 
+Currently supported tests:
    - mutlipy (Generates and Validates Multiplication Questions).
 
 ## Development server
