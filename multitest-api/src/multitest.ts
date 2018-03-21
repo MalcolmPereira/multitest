@@ -4,6 +4,9 @@ export class MultiTest {
         if (cNumber < 1) {
             cNumber = 1;
         }
+        if (cNumber > 100) {
+          cNumber = 100;
+        }
         if (totalQuestions < 10) {
             totalQuestions = 10;
         }
