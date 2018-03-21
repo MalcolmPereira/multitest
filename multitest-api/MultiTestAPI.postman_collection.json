@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "3b91bc18-bb24-4222-8e10-bbe513a345e7",
+		"name": "MultiTestAPI",
+		"description": "Multi Test Node/Express TypeScript",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Multiply-GetQuestions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/multiply?name=someuser&multiple=2&totalQuestions=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"multiply"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "someuser"
+						},
+						{
+							"key": "multiple",
+							"value": "2"
+						},
+						{
+							"key": "totalQuestions",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Multi-Test Get Questions"
+			},
+			"response": []
+		},
+		{
+			"name": "Multiply-PostQuestions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"multiple\": \"2\",\n    \"questions\": [\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 9,\n            \"userAnswer\": 18\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 3,\n            \"userAnswer\": 6\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 7,\n            \"userAnswer\": 14\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 2,\n            \"userAnswer\": 4\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 6,\n            \"userAnswer\": 12\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 5,\n            \"userAnswer\": 10\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 8,\n            \"userAnswer\": 16\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 1,\n            \"userAnswer\": 2\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 10,\n            \"userAnswer\": 20\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 4,\n            \"userAnswer\": 10\n        }\n    ],\n    \"startTime\": \"2018-03-20T23:44:22.184Z\",\n    \"totalQuestions\": 10,\n    \"totalTime\": \"\",\n    \"userName\": \"someuser\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/multiply",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"multiply"
+					]
+				},
+				"description": "Multi-Test Get Questions"
+			},
+			"response": []
+		}
+	]
+}
