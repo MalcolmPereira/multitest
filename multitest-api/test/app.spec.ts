@@ -24,7 +24,7 @@ describe("app", () => {
       })
   );
 
-  it("Get Multiply Less Than 10", () =>
+  it("Get Multiply Total Questions Less Than 10", () =>
     supertest(app)
       .get("/multiply?name=someuser&multiple=2&totalQuestions=5")
       .expect("Content-Type", /json/)
@@ -42,7 +42,7 @@ describe("app", () => {
       })
   );
 
-  it("Get Multiply Greater Than 50", () =>
+  it("Get Multiply Total Questions Greater Than 50", () =>
     supertest(app)
       .get("/multiply?name=someuser&multiple=2&totalQuestions=100")
       .expect("Content-Type", /json/)
