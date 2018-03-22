@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 5px;
+  background-color: #eeeeee;
+  font-family: Roboto, sans-serif;
+}
+
+.fill-space {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
