@@ -1,0 +1,26 @@
+.home-tab-group {
+  padding: 10px;
+  margin: 4px;
+  border: 2px solid #3F51B5;
+  height: 88%;
+}
+
+.home-tab-content {
+  padding: 26px;
+}
+
+.mat-tab-label {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: #38393d;
+    font-weight: 700;
+}
+
+.mat-tab-label-active {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: #38393d;
+    font-weight: 700;
+}
