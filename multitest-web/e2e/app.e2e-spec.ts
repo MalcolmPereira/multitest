@@ -1,14 +1,16 @@
-import { AppPage } from './app.po';
+import { HomePage } from './app.po';
 
-describe('multitest-web App', () => {
-  let page: AppPage;
+describe('Multitest Web App', () => {
+
+  let page: HomePage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new HomePage();
   });
 
-  it('should display welcome message', () => {
+  it('Should display app titkle ', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getAppTitle()).toEqual('MultiTest');
   });
+
 });
