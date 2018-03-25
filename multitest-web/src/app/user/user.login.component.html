@@ -1,0 +1,34 @@
+<mat-card class="app-card">
+  <mat-card-subtitle><div *ngIf="isError" class="mat-card-subtitle-error">{{errorMessage}}</div></mat-card-subtitle>
+  <mat-card-content>
+      <form [formGroup]="loginForm" class="login-form" autocomplete="off" novalidate>
+        <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
+            <thead>
+                <tr>
+                    <td colspan="3" align="right">
+                        <span class="material-icons">account_circle</span>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <mat-form-field class="app-full-width">
+                            <mat-label>Name</mat-label>
+                            <input matInput [formControl]="userName" id="userName" maxlength="25" text required>
+                            <mat-error>Valid User Name Required</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+                        <button [disabled]="loginForm.invalid" class="mat-button-submit" mat-button>Login</button>
+                    </td>
+                </tr>
+            </tfoot>
+          </table>
+      </form>
+  </mat-card-content>
+</mat-card>

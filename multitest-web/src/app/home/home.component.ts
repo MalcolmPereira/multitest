@@ -6,4 +6,5 @@ import { Component, ViewEncapsulation} from '@angular/core';
   styleUrls: ['./home.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent{}
+export class HomeComponent{
+}

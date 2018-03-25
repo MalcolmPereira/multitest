@@ -1,6 +1,5 @@
 <mat-toolbar color="primary">
-   <img src="assets/QMe_Logo.png" width="50" height="50"/><span>&nbsp;<h3>MultiTest</h3></span>
-   <span *ngIf="(isLoggedOn())"><h5>{{getWelcomeMessage()}}</h5></span>
-   <button *ngIf="!(isLoggedOn())" (click)="login()">Login</button>
-   <button *ngIf="(isLoggedOn())" (click)="logoff()">Logoff</button>
+   <img src="assets/QMe_Logo.png" width="50" height="50"/>&nbsp;<span><h3>MultiTest</h3></span>
+   <span class="fill-space"></span>
+   <span *ngIf="isLoggedOn()" class="mat-body-2">Welcome: {{userService.getCurrentUser().name}}</span>
 </mat-toolbar>

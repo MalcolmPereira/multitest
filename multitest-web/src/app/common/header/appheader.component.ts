@@ -1,8 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 
-import { UserService } from '../../user/user.service'
+import { Router , NavigationStart} from '@angular/router';
 
-
+import { UserService } from '../../user/index'
 
 @Component({
   selector: 'app-header',
@@ -10,11 +10,13 @@ import { UserService } from '../../user/user.service'
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor(private userService: UserService){
+  constructor(private router: Router, private userService: UserService){
   }
 
   ngOnInit(): void {
-    console.log(this.isLoggedOn());
+    if(!this.userService.getCurrentUser()){
+      this.router.navigate(['/login']);
+    }
   }
 
   isLoggedOn(): Boolean {
@@ -24,16 +26,7 @@ export class AppHeaderComponent implements OnInit {
     return false;
   }
 
-  getWelcomeMessage(): string{
-    return "Welcolm " + this.userService.getCurrentUser().name;
-  }
-
-  login(){
-    this.userService.login('malcolm','malcolm','malcolm');
-  }
-
   logoff(){
     this.userService.logoff();
   }
-
 }

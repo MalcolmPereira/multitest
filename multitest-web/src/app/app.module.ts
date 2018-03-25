@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgReduxModule, NgRedux } from '@angular-redux/store'
 
 import { AppComponent } from './app.component';
@@ -22,13 +23,16 @@ import {
       IUserState,
       INITIAL_STATE,
       UserSessionActions,
-      UserService
+      UserService,
+      UserLoginComponent
 } from './user/index';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgReduxModule,
     AppRoutingModule,
     AppMaterialModule,
@@ -36,6 +40,7 @@ import {
   declarations: [
     AppComponent,
     AppHeaderComponent,
+    UserLoginComponent,
     HomeComponent
   ],
   providers: [

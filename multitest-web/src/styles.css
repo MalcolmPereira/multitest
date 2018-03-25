@@ -1,6 +1,6 @@
 html, body {
-  margin: 5px;
-  background-color: #eeeeee;
+  margin: 1px;
+  background-color: #616161;
   font-family: Roboto, sans-serif;
   height:100%;
 }
@@ -9,4 +9,104 @@ html, body {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+}
+
+.app-full-width {
+  width: 100%;
+}
+
+.app-card {
+  margin: auto;
+  margin-top: 10px;
+  width: 30%;
+  background-color: #616161;
+}
+
+input {
+  font-size:14px;
+  color: #FFFFFF;
+}
+
+.mat-form-field label {
+  font-size:14px !important;
+  color: #FFFFFF !important;
+}
+
+.mat-form-field.mat-form-field-focused label {
+  color: #ffffff !important;
+}
+
+
+.mat-button-submit {
+  color : #ffffff;
+  background-color: #1b9dec;
+  width: 80px;
+  height: 30px;
+  line-height: 10px;
+  min-height: 10px;
+  vertical-align: top;
+  font-size: 14px;
+  padding: 0 0;
+  margin: 0;
+}
+
+.mat-button-submit:not([disabled]): {
+  color : #ffffff;
+  background-color: #1b9dec;
+  width: 80px;
+  height: 30px;
+  line-height: 10px;
+  min-height: 10px;
+  vertical-align: top;
+  font-size: 14px;
+  padding: 0 0;
+  margin: 0;
+}
+
+.mat-button-submit:disabled {
+  color : #ffffff;
+  background-color: #1b9dec;
+  width: 80px;
+  height: 30px;
+  line-height: 10px;
+  min-height: 10px;
+  vertical-align: top;
+  font-size: 14px;
+  padding: 0 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.eot"); /* For IE6-8 */
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url("../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2") format('woff2'),
+  url("../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff") format('woff'),
+  url("../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf") format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons', 'sans-serif';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
