@@ -1,5 +1,14 @@
 <mat-toolbar color="primary">
    <img src="assets/QMe_Logo.png" width="50" height="50"/>&nbsp;<span><h3>MultiTest</h3></span>
    <span class="fill-space"></span>
-   <span *ngIf="isLoggedOn()" class="mat-body-2">Welcome: {{userService.getCurrentUser().name}}</span>
+   <span *ngIf="isLoggedOn()" class="mat-body-2">
+      Welcome: {{userService.getCurrentUser().name}}
+   </span>
+   &nbsp;
+   <span *ngIf="isLoggedOn()" class="material-icons" [matMenuTriggerFor]="menu">
+     menu
+   </span>
+   <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logoff()">Sign Out</button>
+   </mat-menu>
 </mat-toolbar>

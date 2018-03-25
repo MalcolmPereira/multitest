@@ -29,6 +29,7 @@ export class UserService implements IUserService {
   }
 
   getCurrentUser(): IUser {
+     //console.log("Now Checking ",this.ngRedux.getState());
      return this.ngRedux.getState().user;
   }
 

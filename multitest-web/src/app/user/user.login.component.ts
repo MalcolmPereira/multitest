@@ -1,4 +1,4 @@
-import { Component , Renderer2, OnInit,  AfterViewInit} from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { UserService } from './user.service'
   styleUrls: ['./user.login.component.css'],
 
 })
-export class UserLoginComponent implements  OnInit, AfterViewInit {
+export class UserLoginComponent implements  OnInit {
 
   loginForm: FormGroup;
   userName: FormControl;
@@ -19,7 +19,7 @@ export class UserLoginComponent implements  OnInit, AfterViewInit {
   isError: boolean = false;
   errorMessage: string = undefined;
 
-  constructor(private router: Router, private renderer:Renderer2, private userService: UserService){
+  constructor(private router: Router, private userService: UserService){
   }
 
   ngOnInit(): void {
@@ -31,12 +31,10 @@ export class UserLoginComponent implements  OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
+  doLogin(formValues){
+    if(this.userName.touched && this.loginForm.valid){
+      this.userService.login(this.userName.value,"","");
+      this.router.navigate(['/home']);
+    }
   }
-
-  login(formValues){
-      if(this.userName.touched && this.userPassword.touched && this.loginForm.valid){
-      }
-  }
-
 }

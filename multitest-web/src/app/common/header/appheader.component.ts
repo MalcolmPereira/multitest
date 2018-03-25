@@ -28,5 +28,6 @@ export class AppHeaderComponent implements OnInit {
 
   logoff(){
     this.userService.logoff();
+    this.router.navigate(['/login']);
   }
 }

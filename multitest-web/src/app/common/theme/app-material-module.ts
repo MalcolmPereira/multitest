@@ -5,7 +5,9 @@ import {
   MatTabsModule,
   MatCardModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatIconModule,
+  MatMenuModule
 } from '@angular/material';
 
 @NgModule({
@@ -14,14 +16,19 @@ import {
             MatTabsModule,
             MatCardModule,
             MatFormFieldModule,
-            MatInputModule
+            MatInputModule,
+            MatIconModule,
+            MatMenuModule
   ],
   exports: [
             MatToolbarModule,
             MatTabsModule,
             MatCardModule,
             MatFormFieldModule,
-            MatInputModule
+            MatInputModule,
+            MatIconModule,
+            MatMenuModule
+
   ],
 })
 export class AppMaterialModule {

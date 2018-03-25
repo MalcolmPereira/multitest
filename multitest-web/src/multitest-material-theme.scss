@@ -2,9 +2,9 @@
 
 @include mat-core();
 
-$qme-app-primary: mat-palette($mat-grey, 800, 700, 600);
-$qme-app-accent: mat-palette($mat-blue,500,500,500);
+$qme-app-primary: mat-palette($mat-grey, 800, 700, 800);
+$qme-app-accent: mat-palette($mat-grey,50,50,50);
 $qme-app-warn:mat-palette($mat-red,A200,A200,A200);
-$qme-app-theme: mat-light-theme($qme-app-primary, $qme-app-accent, $qme-app-warn);
+$qme-app-theme: mat-dark-theme($qme-app-primary, $qme-app-accent, $qme-app-warn);
 
 @include angular-material-theme($qme-app-theme);

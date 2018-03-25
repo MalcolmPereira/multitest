@@ -22,56 +22,57 @@ html, body {
   background-color: #616161;
 }
 
-input {
-  font-size:14px;
-  color: #FFFFFF;
+.mat-focused .mat-form-field-label {
+    color: #FAFAFA !important;
 }
 
-.mat-form-field label {
-  font-size:14px !important;
-  color: #FFFFFF !important;
+.mat-form-field-ripple {
+    background-color: #FAFAFA !important;
 }
 
-.mat-form-field.mat-form-field-focused label {
-  color: #ffffff !important;
-}
 
 
 .mat-button-submit {
-  color : #ffffff;
-  background-color: #1b9dec;
-  width: 80px;
-  height: 30px;
+  color : #FAFAFA;
+  background-color: #1B9DEC;
+  width: 70px;
+  height: 25px;
   line-height: 10px;
   min-height: 10px;
   vertical-align: top;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
+  font-weight: bold;
   padding: 0 0;
   margin: 0;
 }
 
 .mat-button-submit:not([disabled]): {
-  color : #ffffff;
-  background-color: #1b9dec;
-  width: 80px;
-  height: 30px;
+  color : #FAFAFA;
+  background-color: #1B9DEC;
+  width: 70px;
+  height: 25px;
   line-height: 10px;
   min-height: 10px;
   vertical-align: top;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
+  font-weight: bold;
   padding: 0 0;
   margin: 0;
 }
 
 .mat-button-submit:disabled {
-  color : #ffffff;
-  background-color: #1b9dec;
-  width: 80px;
-  height: 30px;
+  color : #FAFAFA;
+  background-color: #90CAF9;
+  width: 70px;
+  height: 25px;
   line-height: 10px;
   min-height: 10px;
   vertical-align: top;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
+  font-weight: bold;
   padding: 0 0;
   margin: 0;
 }
