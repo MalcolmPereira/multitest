@@ -7,7 +7,7 @@ import { MultiplyComponent } from './generatetest/index';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: UserLoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'multiply', component: MultiplyComponent }
