@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/index';
 import { UserLoginComponent } from './user/index';
+import { MultiplyComponent } from './generatetest/index';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'login', component: UserLoginComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'multiply', component: MultiplyComponent }
 ];
 
 @NgModule({

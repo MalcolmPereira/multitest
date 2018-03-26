@@ -2,7 +2,9 @@ import { Component, OnInit} from '@angular/core';
 
 import { Router , NavigationStart} from '@angular/router';
 
-import { UserService } from '../../user/index'
+import { NgRedux } from '@angular-redux/store';
+
+import { IUserState, UserService } from '../../user/index'
 
 @Component({
   selector: 'app-header',
@@ -10,10 +12,11 @@ import { UserService } from '../../user/index'
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor(private router: Router, private userService: UserService){
+  constructor(private ngRedux: NgRedux<IUserState>, private router: Router, private userService: UserService){
   }
 
   ngOnInit(): void {
+    console.log(this.ngRedux.getState());
     if(!this.userService.getCurrentUser()){
       this.router.navigate(['/login']);
     }

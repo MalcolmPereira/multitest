@@ -27,6 +27,10 @@ import {
       UserLoginComponent
 } from './user/index';
 
+import {
+  MultiplyComponent
+} from './generatetest/index';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import {
     AppComponent,
     AppHeaderComponent,
     UserLoginComponent,
-    HomeComponent
+    HomeComponent,
+    MultiplyComponent
   ],
   providers: [
       UserSessionActions,
