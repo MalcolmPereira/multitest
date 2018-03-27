@@ -15,7 +15,6 @@ export class UserLoginComponent implements  OnInit {
 
   loginForm: FormGroup;
   userName: FormControl;
-  userPassword: FormControl;
   isError: boolean = false;
   errorMessage: string = undefined;
 
