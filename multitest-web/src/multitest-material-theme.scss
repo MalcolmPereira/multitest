@@ -8,3 +8,55 @@ $qme-app-warn:mat-palette($mat-red,A200,A200,A200);
 $qme-app-theme: mat-dark-theme($qme-app-primary, $qme-app-accent, $qme-app-warn);
 
 @include angular-material-theme($qme-app-theme);
+
+html, body {
+  margin: 1px;
+  background-color: mat-color($qme-app-primary,700);
+  font-family: Roboto, sans-serif;
+  height:100%;
+}
+
+.app-card {
+  margin: auto;
+  margin-top: 10px;
+  width: 30%;
+  background-color: mat-color($qme-app-primary,700);
+}
+
+.mat-focused .mat-form-field-label {
+    color: mat-color($mat-grey,50) !important;
+}
+
+.mat-form-field-ripple {
+    background-color: mat-color($mat-grey,50) !important;
+}
+
+.mat-button-submit {
+  color : mat-color($mat-grey,50);
+  background-color: mat-color($mat-blue,500);
+  width: 70px;
+  height: 25px;
+  line-height: 10px;
+  min-height: 10px;
+  vertical-align: top;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 0;
+  margin: 0;
+}
+
+.mat-button-submit:disabled {
+ color : mat-color($mat-grey,50);
+ background-color: mat-color($mat-blue,200);
+ width: 70px;
+ height: 25px;
+ line-height: 10px;
+ min-height: 10px;
+ vertical-align: top;
+ font-family: Roboto, sans-serif;
+ font-size: 14px;
+ font-weight: bold;
+ padding: 0 0;
+ margin: 0;
+}
