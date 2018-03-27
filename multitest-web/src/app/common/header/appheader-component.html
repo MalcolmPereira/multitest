@@ -12,3 +12,6 @@
       <button mat-menu-item (click)="logoff()">Sign Out</button>
    </mat-menu>
 </mat-toolbar>
+<mat-tab-group *ngIf="isLoggedOn()" class="home-tab-group">
+  <mat-tab label="Basics"><mat-tab>
+<mat-tab-group>
