@@ -7,7 +7,7 @@
               <tbody>
                   <tr>
                       <td colspan="3">
-                        <mat-form-field class="app-full-width">
+                        <mat-form-field class="input-width">
                             <mat-label>Multiple</mat-label>
                             <input matInput formControlName="multiple" id="multiple" type="number" step="1" min="1" max="50" required autofocus>
                             <mat-error>Valid Number between 1 to 50 Required</mat-error>
@@ -16,7 +16,7 @@
                   </tr>
                   <tr>
                       <td colspan="3">
-                        <mat-form-field class="app-full-width">
+                        <mat-form-field class="input-width">
                             <mat-label>Number of Questions</mat-label>
                             <input matInput formControlName="totalQuestions" id="totalQuestions" type="number" step="1" min="1" max="50" required>
                             <mat-error>Valid Number between 1 to 50 Required</mat-error>
@@ -24,13 +24,13 @@
                       </td>
                   </tr>
                   <tr>
-                      <td width="60%"></td>
-                      <td align="right" width="20%">
+                      <td align="left" width="20%">
                         <button [disabled]="(multiplyForm.invalid)" class="mat-button-submit" mat-button (click)="getMultiplySet()">Submit</button>
                       </td>
-                      <td align="right" width="20%">
+                      <td align="left" width="20%">
                         <button [disabled]="multiplyForm.pristine" class="mat-button-clear" mat-button (click)="resetForm()">Clear</button>
                       </td>
+                      <td width="60%"></td>
                   </tr>
               </tbody>
         </table>

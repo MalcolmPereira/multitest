@@ -35,14 +35,17 @@ html, body {
   @extend .app-card;
   margin: auto;
   margin-top: 10px;
-  width: 50%;
+  width: 40%;
 }
 
 .app-card-basics-form  {
   @extend .app-card;
-  margin-left: 50px;
-  margin-top: 10px;
-  width: 50%;
+  margin-left: 30px;
+  width: 60%;
+}
+
+.input-width {
+  width: 80%;
 }
 
 .mat-focused .mat-form-field-label {
