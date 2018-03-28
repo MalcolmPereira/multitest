@@ -83,6 +83,36 @@ html, body {
  margin: 0;
 }
 
+.mat-button-clear {
+  color : mat-color($mat-grey,50);
+  background-color: mat-color($mat-grey,500);
+  width: 70px;
+  height: 25px;
+  line-height: 10px;
+  min-height: 10px;
+  vertical-align: top;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 0;
+  margin: 0;
+}
+
+.mat-button-clear:disabled {
+ color : mat-color($mat-grey,50);
+ background-color: mat-color($mat-grey,300);
+ width: 70px;
+ height: 25px;
+ line-height: 10px;
+ min-height: 10px;
+ vertical-align: top;
+ font-family: Roboto, sans-serif;
+ font-size: 14px;
+ font-weight: bold;
+ padding: 0 0;
+ margin: 0;
+}
+
 .nav_back{
   font-size: 50px;
   color: mat-color($mat-blue,400);

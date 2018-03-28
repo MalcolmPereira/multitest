@@ -18,10 +18,12 @@ export class MultiplyComponent{
   constructor(private router: Router){
   }
 
-  getMultiplySet(){
-    if(this.multiplyForm.valid){
-      console.log("got Values",this.multiplyForm.get('multiple').value,)
-    }
+  resetForm(){
+    this.multiplyForm.get('multiple').reset();
+    this.multiplyForm.get('totalQuestions').reset();
   }
 
+  getMultiplySet(){
+
+  }
 }

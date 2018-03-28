@@ -1,13 +1,39 @@
-<span class="material-icons nav_back" [routerLink]="['/home']">navigate_before</span>
+<span class="material-icons nav_back" (click)="resetForm()" [routerLink]="['/home']">navigate_before</span>
 <mat-card class="app-card-basics-form">
   <mat-card-subtitle><div *ngIf="isError" class="app-card-error">{{errorMessage}}</div></mat-card-subtitle>
   <mat-card-content>
-    <form [formGroup]="multiplyForm" class="multiply-form" (ngSubmit)="getMultiplySet()" autocomplete="off" novalidate>
-          <mat-form-field class="app-full-width">
-          <mat-label>Number</mat-label>
-              <input matInput formControlName="multiple" id="multiple" type="number" step="10" min="1" max="50" required autofocus>
-              <mat-error>Valid Multiple between 1 to 50 Required</mat-error>
-          </mat-form-field>
+    <form [formGroup]="multiplyForm" class="multiply-form" autocomplete="off" novalidate>
+          <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
+              <tbody>
+                  <tr>
+                      <td colspan="3">
+                        <mat-form-field class="app-full-width">
+                            <mat-label>Multiple</mat-label>
+                            <input matInput formControlName="multiple" id="multiple" type="number" step="1" min="1" max="50" required autofocus>
+                            <mat-error>Valid Number between 1 to 50 Required</mat-error>
+                        </mat-form-field>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan="3">
+                        <mat-form-field class="app-full-width">
+                            <mat-label>Number of Questions</mat-label>
+                            <input matInput formControlName="totalQuestions" id="totalQuestions" type="number" step="1" min="1" max="50" required>
+                            <mat-error>Valid Number between 1 to 50 Required</mat-error>
+                        </mat-form-field>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td width="60%"></td>
+                      <td align="right" width="20%">
+                        <button [disabled]="(multiplyForm.invalid)" class="mat-button-submit" mat-button (click)="getMultiplySet()">Submit</button>
+                      </td>
+                      <td align="right" width="20%">
+                        <button [disabled]="multiplyForm.pristine" class="mat-button-clear" mat-button (click)="resetForm()">Clear</button>
+                      </td>
+                  </tr>
+              </tbody>
+        </table>
     </form>
   </mat-card-content>
 </mat-card>
