@@ -16,11 +16,33 @@ html, body {
   height:100%;
 }
 
+.app-full-width {
+  width: 100%;
+}
+
 .app-card {
+  background-color: mat-color($qme-app-primary,700);
+}
+
+.app-card-error{
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  color: mat-color($qme-app-warn);
+}
+
+.app-card-login-form  {
+  @extend .app-card;
   margin: auto;
   margin-top: 10px;
   width: 30%;
-  background-color: mat-color($qme-app-primary,700);
+}
+
+.app-card-basics-form  {
+  @extend .app-card;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 50%;
 }
 
 .mat-focused .mat-form-field-label {
