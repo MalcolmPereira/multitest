@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
-import { MultiTest } from './multitest';
+import { MultiTestImpl } from "./multitest.api.impl";
 
 class App {
 
@@ -19,24 +19,25 @@ class App {
 
         const router = express.Router();
 
-        router.route('/multiply')
+        router.route("/multiply")
               .get((req, res) => {
                     const name = req.query.name;
-                    const multiple = parseInt(req.query.multiple);
+                    const challengeNumber = parseInt(req.query.challengeNumber);
                     const totalQuestions =  parseInt(req.query.totalQuestions);
-                    const multi = new MultiTest();
+                    const operator =  req.query.operator;
+                    const multi = new MultiTestImpl();
                     res.json(
-                        multi.generateMultiTest(name, multiple, totalQuestions),
+                        multi.generateMultiTest(name, challengeNumber, totalQuestions,operator)
                     );
                 })
                 .post( (req, res) => {
-                    const multi = new MultiTest();
+                    const multi = new MultiTestImpl();
                     res.json(
                       multi.validateMultiTest(req.body),
                     );
                 });
 
-        this.express.use('/', router);
+        this.express.use("/", router);
     }
 }
 export default new App().express;

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3b91bc18-bb24-4222-8e10-bbe513a345e7",
+		"_postman_id": "fdddef58-d24e-49f0-a3fe-abb22b9f5445",
 		"name": "MultiTestAPI",
 		"description": "Multi Test Node/Express TypeScript",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -11,9 +11,12 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "http://localhost:3000/multiply?name=someuser&multiple=2&totalQuestions=10",
+					"raw": "http://localhost:3000/multiply?name=someuser&challengeNumber=2&totalQuestions=10&operator=multiply",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -28,12 +31,16 @@
 							"value": "someuser"
 						},
 						{
-							"key": "multiple",
+							"key": "challengeNumber",
 							"value": "2"
 						},
 						{
 							"key": "totalQuestions",
 							"value": "10"
+						},
+						{
+							"key": "operator",
+							"value": "multiply"
 						}
 					]
 				},
@@ -53,7 +60,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"multiple\": \"2\",\n    \"questions\": [\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 9,\n            \"userAnswer\": 18\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 3,\n            \"userAnswer\": 6\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 7,\n            \"userAnswer\": 14\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 2,\n            \"userAnswer\": 4\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 6,\n            \"userAnswer\": 12\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 5,\n            \"userAnswer\": 10\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 8,\n            \"userAnswer\": 16\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 1,\n            \"userAnswer\": 2\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 10,\n            \"userAnswer\": 20\n        },\n        {\n            \"correct\": false,\n            \"correctAnswer\": 0,\n            \"multiple\": \"2\",\n            \"number\": 4,\n            \"userAnswer\": 10\n        }\n    ],\n    \"startTime\": \"2018-03-20T23:44:22.184Z\",\n    \"totalQuestions\": 10,\n    \"totalTime\": \"\",\n    \"userName\": \"someuser\"\n}"
+					"raw": "{\r\n\t\"challengeNumber\": 2,\r\n\t\"operator\": \"multiply\",\r\n\t\"questions\": [\r\n\t\t\t{\"number1\": 2,\"number2\": 2,\"userAnswer\": 4},\r\n\t\t\t{\"number1\": 2,\"number2\": 3,\"userAnswer\": 6},\r\n\t\t\t{\"number1\": 2,\"number2\": 4,\"userAnswer\": 8},\r\n\t\t\t{\"number1\": 2,\"number2\": 5,\"userAnswer\": 10},\r\n\t\t\t{\"number1\": 2,\"number2\": 6,\"userAnswer\": 12},\r\n\t\t\t{\"number1\": 2,\"number2\": 7,\"userAnswer\": 14},\r\n\t\t\t{\"number1\": 2,\"number2\": 8,\"userAnswer\": 14},\r\n\t\t\t{\"number1\": 2,\"number2\": 9,\"userAnswer\": 14},\r\n\t\t\t{\"number1\": 2,\"number2\": 10,\"userAnswer\": 14},\r\n\t\t\t{\"number1\": 2,\"number2\": 11,\"userAnswer\": 14}\r\n\t],\r\n\t\"startTime\": \"2018-03-20T23:44:22.184Z\",\r\n\t\"userName\": \"someuser\"\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/multiply",
