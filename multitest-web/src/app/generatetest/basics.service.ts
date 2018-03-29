@@ -5,6 +5,8 @@ import { Observable } from "rxjs";
 
 import { IBasicsOperator, IBasicsChallenge } from "./basics.model";
 
+import { UserService } from "../user/index"
+
 @Injectable()
 export class BasicsService {
 
@@ -13,11 +15,11 @@ export class BasicsService {
     private readonly TOTAL_QUESTIONS:string = "totalQuestions";
     private readonly OPERATOR:string = "operator";
 
-    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {
+    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient, private userService: UserService) {
     }
 
-    getMultiplyQuestions(userName: string, challengeNumber: number, totalQuestions: number) : Observable<IBasicsChallenge>  {
-        let API_URL = this.config.MULTIPLY_SERVICE+"?"+this.NAME+"="+userName+"&"+this.CHALLENGE_NUMBER+"="+challengeNumber+"&"+this.TOTAL_QUESTIONS+"="+totalQuestions+"&"+this.OPERATOR+"="+IBasicsOperator.MULTIPLY;
+    getMultiplyQuestions(challengeNumber: number, totalQuestions: number) : Observable<IBasicsChallenge>  {
+        let API_URL = this.config.MULTIPLY_SERVICE+"?"+this.NAME+"="+this.userService.getCurrentUser().name+"&"+this.CHALLENGE_NUMBER+"="+challengeNumber+"&"+this.TOTAL_QUESTIONS+"="+totalQuestions+"&"+this.OPERATOR+"="+IBasicsOperator.MULTIPLY;
         return this.http.get<IBasicsChallenge>(API_URL);
     }
 }

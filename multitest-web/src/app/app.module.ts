@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgReduxModule, NgRedux } from "@angular-redux/store"
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from "./app.component";
 
@@ -10,7 +11,10 @@ import { AppRoutingModule } from "./app.routing"
 
 import {
   AppMaterialModule,
-  AppHeaderComponent
+  AppHeaderComponent,
+  IAppConfig,
+  AppConfig,
+  APP_CONFIG
 } from "./common/index";
 
 import {
@@ -39,6 +43,7 @@ import {
     FormsModule,
     ReactiveFormsModule,
     NgReduxModule,
+    HttpClientModule,
     AppRoutingModule,
     AppMaterialModule,
   ],
@@ -52,7 +57,8 @@ import {
   providers: [
       UserSessionActions,
       UserService,
-      BasicsService
+      BasicsService,
+      { provide: APP_CONFIG, useValue: AppConfig }
   ],
   bootstrap: [AppComponent]
 })
