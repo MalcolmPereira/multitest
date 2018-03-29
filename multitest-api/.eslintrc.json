@@ -15,7 +15,7 @@
         ],
         "quotes": [
             "error",
-            "single"
+            "double"
         ],
         "semi": [
             "error",
@@ -26,7 +26,9 @@
       "files": ["**/*.ts"],
       "parser": "typescript-eslint-parser",
       "rules": {
-        "no-undef": "off"
+        "no-undef": "off",
+        "no-unused-vars": "off",
+        "no-console": "off"
       }
     }
 }
