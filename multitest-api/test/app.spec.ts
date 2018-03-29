@@ -24,6 +24,39 @@ describe("app", () => {
       })
   );
 
+  it("Get Multiply - Error ", () =>
+    supertest(app)
+      .get("/multiply")
+      .expect("Content-Type", /json/)
+      .expect(500)
+      .expect(function(res){
+            expect(res.body.error).equal(500);
+            expect(res.body.errorMessage).equal("Valid User Name Required");
+      })
+  );
+
+  it("Get Multiply - Error Challenge Number ", () =>
+    supertest(app)
+      .get("/multiply?name=someuser")
+      .expect("Content-Type", /json/)
+      .expect(500)
+      .expect(function(res){
+            expect(res.body.error).equal(500);
+            expect(res.body.errorMessage).equal("Valid Challenge Number Required");
+      })
+  );
+
+  it("Get Multiply - Error Operator ", () =>
+    supertest(app)
+      .get("/multiply?name=someuser&challengeNumber=2&totalQuestions=10")
+      .expect("Content-Type", /json/)
+      .expect(500)
+      .expect(function(res){
+            expect(res.body.error).equal(500);
+            expect(res.body.errorMessage).equal("Valid Operator Required");
+      })
+  );
+
   it("Get Multiply Total Questions Less Than 10", () =>
     supertest(app)
       .get("/multiply?name=someuser&challengeNumber=2&totalQuestions=5&operator=multiply")

@@ -26,15 +26,21 @@ class App {
                     const totalQuestions =  parseInt(req.query.totalQuestions);
                     const operator =  req.query.operator;
                     const multi = new MultiTestImpl();
-                    res.json(
-                        multi.generateMultiTest(name, challengeNumber, totalQuestions,operator)
-                    );
+                    try{
+                        const challenge = multi.generateMultiTest(name, challengeNumber, totalQuestions,operator);
+                        res.status(200).json(challenge);
+                    }catch(error){
+                        res.status(500).json({"error":500,"errorMessage": error.message});
+                    }
                 })
                 .post( (req, res) => {
                     const multi = new MultiTestImpl();
-                    res.json(
-                      multi.validateMultiTest(req.body),
-                    );
+                    try{
+                        const challengeResult = multi.validateMultiTest(req.body);
+                        res.status(200).json(challengeResult);
+                    }catch(error){
+                        res.status(500).json({"error":500,"errorMessage": error.message});
+                    }
                 });
 
         this.express.use("/", router);
