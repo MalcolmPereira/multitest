@@ -1,3 +1,3 @@
-export * from './header/index';
-export * from './theme/index';
-export * from './app-consts'
+export * from "./header/index";
+export * from "./theme/index";
+export * from "./app-consts";

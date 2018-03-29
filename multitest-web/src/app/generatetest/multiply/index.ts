@@ -1,1 +1,1 @@
-export * from './multiply.component';
+export * from "./multiply.component";

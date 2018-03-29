@@ -1,21 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NgReduxModule, NgRedux } from '@angular-redux/store'
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from "@angular/core";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NgReduxModule, NgRedux } from "@angular-redux/store"
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 
-import { AppRoutingModule } from './app.routing'
+import { AppRoutingModule } from "./app.routing"
 
 import {
   AppMaterialModule,
   AppHeaderComponent
-} from './common/index';
+} from "./common/index";
 
 import {
   HomeComponent
-} from './home/index';
+} from "./home/index";
 
 import {
       UserAction,
@@ -25,11 +25,12 @@ import {
       UserSessionActions,
       UserService,
       UserLoginComponent
-} from './user/index';
+} from "./user/index";
 
 import {
-  MultiplyComponent
-} from './generatetest/index';
+  MultiplyComponent,
+  BasicsService
+} from "./generatetest/index";
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import {
   ],
   providers: [
       UserSessionActions,
-      UserService
+      UserService,
+      BasicsService
   ],
   bootstrap: [AppComponent]
 })

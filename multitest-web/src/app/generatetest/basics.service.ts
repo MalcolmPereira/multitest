@@ -1,25 +1,23 @@
-import { Injectable, Inject } from '@angular/core';
-import { Http, RequestOptions, Response, Headers} from '@angular/http';
-import { APP_CONFIG, IAppConfig} from '../common/index';
+import { Injectable, Inject } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { APP_CONFIG, IAppConfig} from "../common/index";
 import { Observable } from "rxjs";
+
+import { IBasicsOperator, IBasicsChallenge } from "./basics.model";
 
 @Injectable()
 export class BasicsService {
 
-    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
+    private readonly NAME:string = "name";
+    private readonly CHALLENGE_NUMBER:string = "challengeNumber";
+    private readonly TOTAL_QUESTIONS:string = "totalQuestions";
+    private readonly OPERATOR:string = "operator";
+
+    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {
     }
 
-
-    getMultiplyQuestions(userName: string, multiple: number, totalQuestions: number){
-       let API_URL = this.config.MULTIPLY_SERVICE+'?name='+userName+'&multiple='+multiple+'&totalQuestions='+totalQuestions;
-
-        return this.http.get(API_URL)
-          .map((response: Response) => {
-              })
-          .catch((error: any) => {
-              return Observable.throw(error.status);
-          });
-        }
-      }
-
+    getMultiplyQuestions(userName: string, challengeNumber: number, totalQuestions: number) : Observable<IBasicsChallenge>  {
+        let API_URL = this.config.MULTIPLY_SERVICE+"?"+this.NAME+"="+userName+"&"+this.CHALLENGE_NUMBER+"="+challengeNumber+"&"+this.TOTAL_QUESTIONS+"="+totalQuestions+"&"+this.OPERATOR+"="+IBasicsOperator.MULTIPLY;
+        return this.http.get<IBasicsChallenge>(API_URL);
+    }
 }

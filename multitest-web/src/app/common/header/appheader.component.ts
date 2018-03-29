@@ -1,12 +1,12 @@
-import { Component , OnInit } from '@angular/core';
+import { Component , OnInit } from "@angular/core";
 
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 
-import { UserService } from '../../user/index'
+import { UserService } from "../../user/index"
 
 @Component({
-  selector: 'app-header',
-  templateUrl: 'appheader-component.html'
+  selector: "app-header",
+  templateUrl: "appheader-component.html"
 })
 export class AppHeaderComponent implements OnInit {
 
@@ -15,7 +15,7 @@ export class AppHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     if(!this.userService.getCurrentUser()){
-      this.router.navigate(['/login']);
+      this.router.navigate(["/login"]);
     }
   }
 
@@ -28,6 +28,6 @@ export class AppHeaderComponent implements OnInit {
 
   logoff(){
     this.userService.logoff();
-    this.router.navigate(['/login']);
+    this.router.navigate(["/login"]);
   }
 }

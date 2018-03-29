@@ -1,6 +1,6 @@
-import { Action } from 'redux';
-import { UserAction, UserSessionActions } from './user.session.action';
-import { IUser } from './user.model';
+import { Action } from "redux";
+import { UserAction, UserSessionActions } from "./user.session.action";
+import { IUser } from "./user.model";
 
 export interface IUserState {
   user: IUser;

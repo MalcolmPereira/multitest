@@ -1,4 +1,4 @@
-import { InjectionToken } from '@angular/core';
+import { InjectionToken } from "@angular/core";
 
 export interface IAppConfig {
    API_END_POINT: string;
@@ -7,7 +7,7 @@ export interface IAppConfig {
 
 export const AppConfig : IAppConfig = {
    API_END_POINT: "http://localhost:3000/",
-   MULTIPLY_SERVICE: this.API_END_POINT + 'multiply',
+   MULTIPLY_SERVICE: this.API_END_POINT + "multiply"
 }
 
-export const APP_CONFIG = new InjectionToken<IAppConfig>('AppConfig');
+export const APP_CONFIG = new InjectionToken<IAppConfig>("AppConfig");
