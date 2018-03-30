@@ -32,6 +32,10 @@ export class MultiplyComponent{
   getMultiplySet(){
     console.log("Challenge Number",this.multiplyForm.get(this.CHALLENGE_NUMBER).value);
     console.log("Total Questions ",this.multiplyForm.get(this.TOTAL_QUESTIONS).value);
-    this.service.getMultiplyQuestions(this.multiplyForm.get(this.CHALLENGE_NUMBER).value, this.multiplyForm.get(this.TOTAL_QUESTIONS).value);
+    this.service.getMultiplyQuestions(this.multiplyForm.get(this.CHALLENGE_NUMBER).value,
+        this.multiplyForm.get(this.TOTAL_QUESTIONS).value).subscribe(
+            data => { console.log(data);},
+            err  => { console.log(err);}
+         );
   }
 }

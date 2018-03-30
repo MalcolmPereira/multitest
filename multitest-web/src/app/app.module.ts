@@ -13,8 +13,8 @@ import {
   AppMaterialModule,
   AppHeaderComponent,
   IAppConfig,
-  AppConfig,
-  APP_CONFIG
+  APP_CONFIG,
+  AppConfig
 } from "./common/index";
 
 import {
@@ -55,10 +55,11 @@ import {
     MultiplyComponent
   ],
   providers: [
+      { provide: APP_CONFIG, useValue: AppConfig},
       UserSessionActions,
       UserService,
       BasicsService,
-      { provide: APP_CONFIG, useValue: AppConfig }
+
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,7 @@
 const express = require("express");
 
+const cors = require("cors");
+
 const bodyParser = require("body-parser");
 
 import { MultiTestImpl } from "./multitest.api.impl";
@@ -12,6 +14,8 @@ class App {
         this.express = express();
         this.express.use(bodyParser.urlencoded({ extended: false }));
         this.express.use(bodyParser.json());
+        //TODO: Configure Cors correctly with whitelist
+        this.express.use(cors());
         this.mountRoutes();
     }
 
