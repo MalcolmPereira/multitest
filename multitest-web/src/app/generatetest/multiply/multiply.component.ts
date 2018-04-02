@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component} from "@angular/core";
 import { FormGroup, FormControl, Validators} from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -21,14 +21,6 @@ export class MultiplyComponent{
     totalQuestions : new FormControl("",[Validators.required]),
   });
 
-  @Input()
-  challengeNumber: number;
-
-  @Input()
-  totalQuestions: number;
-
-
-
   constructor(private router: Router, private service: BasicsService){
     this.isError = false;
     this.errorMessage = "";
@@ -36,8 +28,6 @@ export class MultiplyComponent{
 
   resetForm(){
     this.multiplyForm.reset();
-    this.challengeNumber = undefined;
-    this.totalQuestions = undefined;
     this.isError = false;
     this.errorMessage = "";
   }
@@ -45,7 +35,7 @@ export class MultiplyComponent{
   getMultiplySet(){
     this.isError = false;
     this.errorMessage = "";
-    this.service.getMultiplyQuestions(this.challengeNumber, this.totalQuestions).subscribe(
+    this.service.getMultiplyQuestions(this.multiplyForm.get("challengeNumber").value,   this.multiplyForm.get("totalQuestions").value).subscribe(
             data => {
               console.log(data);
             },

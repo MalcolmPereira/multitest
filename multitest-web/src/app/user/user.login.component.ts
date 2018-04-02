@@ -1,4 +1,4 @@
-import { Component , Input} from "@angular/core";
+import { Component } from "@angular/core";
 import { FormGroup, FormControl, Validators} from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -19,15 +19,12 @@ export class UserLoginComponent {
     userName: new FormControl("",[Validators.required, Validators.minLength(3)])
   });
 
-  @Input()
-  userName: string;
-
   constructor(private router: Router, private userService: UserService){
   }
 
   doLogin(){
     if(this.loginForm.valid){
-      this.userService.login(this.userName,"","");
+      this.userService.login(this.loginForm.get("userName").value,"","");
       this.router.navigate(["/home"]);
     }
   }

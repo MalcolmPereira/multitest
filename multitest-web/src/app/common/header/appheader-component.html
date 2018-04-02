@@ -5,13 +5,11 @@
       Welcome: {{userService.getCurrentUser().name}}
    </span>
    &nbsp;
-   <span *ngIf="isLoggedOn()" class="material-icons" [matMenuTriggerFor]="menu">
-     menu
-   </span>
+   <span *ngIf="isLoggedOn()" class="material-icons" [matMenuTriggerFor]="menu">menu</span>
    <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="logoff()">Sign Out</button>
    </mat-menu>
 </mat-toolbar>
-<mat-tab-group *ngIf="isLoggedOn()" class="home-tab-group">
+<mat-tab-group *ngIf="isLoggedOn()">
   <mat-tab label="Basics"><mat-tab>
 <mat-tab-group>
