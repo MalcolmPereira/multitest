@@ -10,12 +10,14 @@ import { UserService } from "../../user/index"
 })
 export class AppHeaderComponent implements OnInit {
 
+  public readonly title:String = "MultiTest";
+
   constructor(private router: Router, private userService: UserService){
   }
 
   ngOnInit(): void {
     if(!this.userService.getCurrentUser()){
-      this.router.navigate(["/login"]);
+       this.router.navigate(["/login"]);
     }
   }
 

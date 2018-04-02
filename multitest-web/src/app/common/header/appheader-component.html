@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-   <img src="assets/QMe_Logo.png" width="50" height="50"/>&nbsp;<span><h3>MultiTest</h3></span>
+   <img src="assets/QMe_Logo.png" width="50" height="50"/>&nbsp;<span><h3>{{this.title}}</h3></span>
    <span class="fill-space"></span>
    <span *ngIf="isLoggedOn()" class="mat-body-2">
       Welcome: {{userService.getCurrentUser().name}}

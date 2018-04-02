@@ -6,7 +6,7 @@ import { UserLoginComponent } from "./user/index";
 import { MultiplyComponent } from "./generatetest/index";
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
   { path: "login", component: UserLoginComponent },
   { path: "home", component: HomeComponent },

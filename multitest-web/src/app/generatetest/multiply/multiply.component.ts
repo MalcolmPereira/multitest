@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { FormGroup, FormControl, Validators} from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -16,12 +16,18 @@ export class MultiplyComponent{
 
   errorMessage: string = "";
 
-  private readonly CHALLENGE_NUMBER:string = "challengeNumber";
-  private readonly TOTAL_QUESTIONS:string = "totalQuestions";
   multiplyForm = new FormGroup ({
-    "challengeNumber": new FormControl("",[Validators.required]),
-    "totalQuestions" : new FormControl("",[Validators.required]),
+    challengeNumber: new FormControl("",[Validators.required]),
+    totalQuestions : new FormControl("",[Validators.required]),
   });
+
+  @Input()
+  challengeNumber: number;
+
+  @Input()
+  totalQuestions: number;
+
+
 
   constructor(private router: Router, private service: BasicsService){
     this.isError = false;
@@ -29,8 +35,9 @@ export class MultiplyComponent{
   }
 
   resetForm(){
-    this.multiplyForm.get(this.CHALLENGE_NUMBER).reset();
-    this.multiplyForm.get(this.TOTAL_QUESTIONS).reset();
+    this.multiplyForm.reset();
+    this.challengeNumber = undefined;
+    this.totalQuestions = undefined;
     this.isError = false;
     this.errorMessage = "";
   }
@@ -38,8 +45,7 @@ export class MultiplyComponent{
   getMultiplySet(){
     this.isError = false;
     this.errorMessage = "";
-    this.service.getMultiplyQuestions(this.multiplyForm.get(this.CHALLENGE_NUMBER).value,
-        this.multiplyForm.get(this.TOTAL_QUESTIONS).value).subscribe(
+    this.service.getMultiplyQuestions(this.challengeNumber, this.totalQuestions).subscribe(
             data => {
               console.log(data);
             },
