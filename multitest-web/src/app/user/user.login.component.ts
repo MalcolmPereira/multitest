@@ -24,8 +24,17 @@ export class UserLoginComponent {
 
   doLogin(){
     if(this.loginForm.valid){
-      this.userService.login(this.loginForm.get("userName").value,"","");
-      this.router.navigate(["/home"]);
+      this.isError = false;
+      this.errorMessage = "";
+      this.userService.login(this.loginForm.get("userName").value,"","")
+        .subscribe(
+          data => {
+            this.router.navigate(["/home"]);
+          },
+          err => {
+            this.isError = true;
+            this.errorMessage = err;
+        });
     }
   }
 }

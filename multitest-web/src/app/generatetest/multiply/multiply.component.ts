@@ -16,6 +16,8 @@ export class MultiplyComponent{
 
   errorMessage: string = "";
 
+  multiplyFormSubmitForm:FormGroup = undefined;
+
   multiplyForm = new FormGroup ({
     challengeNumber: new FormControl("",[Validators.required]),
     totalQuestions : new FormControl("",[Validators.required]),
@@ -24,12 +26,14 @@ export class MultiplyComponent{
   constructor(private router: Router, private service: BasicsService){
     this.isError = false;
     this.errorMessage = "";
+    this.multiplyFormSubmitForm = undefined;
   }
 
   resetForm(){
     this.multiplyForm.reset();
     this.isError = false;
     this.errorMessage = "";
+    this.multiplyFormSubmitForm = undefined;
   }
 
   getMultiplySet(){
@@ -58,7 +62,7 @@ export class MultiplyComponent{
              this.errorMessage = err.error.errorMessage;
            }else{
               this.errorMessage = "Internal server error from service, please try again later";
-             this.isError = true;
+              this.isError = true;
            }
     }
   }

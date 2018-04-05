@@ -1,5 +1,11 @@
 import { Injectable } from "@angular/core";
 
+import { Observable } from 'rxjs/Observable';
+
+import { of } from 'rxjs/observable/of';
+
+import {_throw} from 'rxjs/observable/throw';
+
 import { NgRedux } from "@angular-redux/store";
 
 import { IUser } from "./user.model";
@@ -14,14 +20,20 @@ export class UserService implements IUserService {
   constructor(private ngRedux: NgRedux<IUserState>, private actions: UserSessionActions) {
   }
 
-  login(username: string, userpassword: string, useremail: string): IUser {
+  login(username: string, userpassword: string, useremail: string): Observable<IUser> {
+
+    //TODO: May be link to some user service try/catch and return _throw("Invalid Error");
+    //for error conditions
+
     const user: IUser = {
       id: 0,
       name: username,
       email: useremail
     }
+
     this.ngRedux.dispatch(this.actions.login(user));
-    return user;
+
+    return of(user);
   }
 
   logoff() {
@@ -35,7 +47,7 @@ export class UserService implements IUserService {
 }
 
 export interface IUserService {
-    login(username: string, userpassword: string, useremail: string): IUser;
+    login(username: string, userpassword: string, useremail: string): Observable<IUser>;
     logoff();
     getCurrentUser(): IUser;
 }
