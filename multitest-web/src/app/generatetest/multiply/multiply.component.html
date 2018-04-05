@@ -38,5 +38,22 @@
   </mat-card-content>
   <mat-card-content *ngIf="multiplyFormSubmitForm">
       New Content!!!
+      <form [formGroup]="multiplyFormSubmitForm" autocomplete="off" novalidate>
+          <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
+              <tbody>
+                <tr>
+                   <td align="left" width="20%">
+                     <button class="mat-button-submit" mat-button>Submit</button>
+                   </td>
+                   <td align="left" width="20%">
+                     <button class="mat-button-clear" mat-button>Clear</button>
+                   </td>
+                   <td align="left" width="60%">
+                     <button class="mat-button-clear" mat-button (click)="cancel()">Cancel</button>
+                   </td>
+               </tr>
+              </tbody>
+          </table>
+      </form>
   </mat-card-content>
 </mat-card>

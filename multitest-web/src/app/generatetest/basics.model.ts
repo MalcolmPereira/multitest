@@ -19,4 +19,5 @@ export interface IBasicsQuestion {
     number1: number;
     number2: number;
     userAnswer: number;
+    idKey?: string;
 }
