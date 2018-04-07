@@ -1,7 +1,7 @@
 <span class="material-icons nav_back" (click)="resetForm()" [routerLink]="['/home']">navigate_before</span>
 <mat-card class="app-card-basics-form">
   <mat-card-subtitle><div *ngIf="isError" class="app-card-error">{{errorMessage}}</div></mat-card-subtitle>
-  <mat-card-content *ngIf="!multiplyFormSubmitForm">
+  <mat-card-content *ngIf="!basicsChallenge">
     <form [formGroup]="multiplyForm" autocomplete="off" novalidate>
           <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
               <tbody>
@@ -36,17 +36,25 @@
         </table>
     </form>
   </mat-card-content>
-  <mat-card-content *ngIf="multiplyFormSubmitForm">
-      New Content!!!
+  <mat-card-content *ngIf="(basicsChallenge && !basicsChallenge.complete)">
       <form [formGroup]="multiplyFormSubmitForm" autocomplete="off" novalidate>
           <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
               <tbody>
+                <tr *ngFor="let question of basicsChallenge.questions">
+                    <td colspan="3">
+                      <mat-form-field class="input-width">
+                          <mat-label>{{question.label}}</mat-label>
+                          <input matInput formControlName="{{question.idKey}}" id="{{question.idKey}}" type="number" step="1" min="1" required autofocus>
+                          <mat-error>Valid Number Required</mat-error>
+                      </mat-form-field>
+                    </td>
+                </tr>
                 <tr>
                    <td align="left" width="20%">
-                     <button class="mat-button-submit" mat-button>Submit</button>
+                     <button [disabled]="(multiplyFormSubmitForm.invalid)" class="mat-button-submit" mat-button (click)="processBasicsChallengeSubmit()">Submit</button>
                    </td>
                    <td align="left" width="20%">
-                     <button class="mat-button-clear" mat-button>Clear</button>
+                     <button class="mat-button-clear" mat-button (click)="resetForm()">Clear</button>
                    </td>
                    <td align="left" width="60%">
                      <button class="mat-button-clear" mat-button (click)="cancel()">Cancel</button>
@@ -55,5 +63,9 @@
               </tbody>
           </table>
       </form>
+  </mat-card-content>
+  <mat-card-content *ngIf="(basicsChallenge && basicsChallenge.complete)">
+    Total Correct: {{basicsChallenge.totalCorrect}}
+    Total Wrong: {{basicsChallenge.totalWrong}}
   </mat-card-content>
 </mat-card>

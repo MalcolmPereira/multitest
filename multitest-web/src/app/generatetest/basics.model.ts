@@ -11,6 +11,7 @@ export interface IBasicsChallenge {
     totalCorrect?: number;
     totalWrong?: number;
     userName: string;
+    complete?:boolean;
 }
 
 export interface IBasicsQuestion {
@@ -20,4 +21,5 @@ export interface IBasicsQuestion {
     number2: number;
     userAnswer: number;
     idKey?: string;
+    label?: string;
 }

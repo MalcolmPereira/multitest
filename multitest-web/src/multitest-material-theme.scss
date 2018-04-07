@@ -58,7 +58,7 @@ html, body {
 
 .mat-button-submit {
   color : mat-color($mat-grey,50);
-  background-color: mat-color($mat-blue,400);
+  background-color: mat-color($mat-blue,500);
   width: 70px;
   height: 25px;
   line-height: 10px;
@@ -73,7 +73,7 @@ html, body {
 
 .mat-button-submit:disabled {
  color : mat-color($mat-grey,50);
- background-color: mat-color($mat-blue,200);
+ background-color: mat-color($mat-blue,300);
  width: 70px;
  height: 25px;
  line-height: 10px;
@@ -88,7 +88,7 @@ html, body {
 
 .mat-button-clear {
   color : mat-color($mat-grey,50);
-  background-color: mat-color($mat-grey,500);
+  background-color: mat-color($mat-grey,600);
   width: 70px;
   height: 25px;
   line-height: 10px;
@@ -103,7 +103,7 @@ html, body {
 
 .mat-button-clear:disabled {
  color : mat-color($mat-grey,50);
- background-color: mat-color($mat-grey,300);
+ background-color: mat-color($mat-grey,500);
  width: 70px;
  height: 25px;
  line-height: 10px;
