@@ -2,6 +2,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TestBed, async, ComponentFixture, ComponentFixtureAutoDetect } from "@angular/core/testing";
 import { Router } from "@angular/router";
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 
 import {
   AppMaterialModule,
@@ -14,7 +16,7 @@ const routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']);
 
 class MockUserSevice implements IUserService {
 
-  login(username: string, userpassword: string, useremail: string): IUser {
+  login(username: string, userpassword: string, useremail: string): Observable<IUser> {
     throw new Error("Method not implemented.");
   }
 

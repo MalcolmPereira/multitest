@@ -1,0 +1,33 @@
+<mat-card class="app-card-basics-form">
+  <mat-card-subtitle>
+    <div *ngIf="isError" class="app-card-error">{{errorMessage}}</div>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <form [formGroup]="questionsForm" autocomplete="off" novalidate>
+        <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
+            <tbody>
+                <tr *ngFor="let question of basicsChallenge.questions">
+                    <td colspan="3">
+                      <mat-form-field class="input-width">
+                          <mat-label>{{question.label}}</mat-label>
+                          <input matInput formControlName="{{question.idKey}}" id="{{question.idKey}}" type="number" step="1" min="1" required autofocus>
+                          <mat-error>Valid Number Required</mat-error>
+                      </mat-form-field>
+                    </td>
+                 </tr>
+                 <tr>
+                   <td align="left" width="20%">
+                      <button type="button" [disabled]="(questionsForm.invalid)" class="mat-button-submit" mat-button (click)="processBasicsChallengeSubmit()">Submit</button>
+                   </td>
+                   <td align="left" width="20%">
+                      <button type="button" class="mat-button-clear" mat-button (click)="resetForm()">Clear</button>
+                   </td>
+                   <td align="left" width="60%">
+                      <button type="button" class="mat-button-clear" mat-button (click)="cancel()">Cancel</button>
+                   </td>
+                  </tr>
+             </tbody>
+          </table>
+      </form>
+  </mat-card-content>
+</mat-card>

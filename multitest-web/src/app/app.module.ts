@@ -33,6 +33,9 @@ import {
 
 import {
   MultiplyComponent,
+  BasicsGenerateQuestionsComponent,
+  BasicsQuestionsComponent,
+  BasicsResultsComponent,
   BasicsService
 } from "./generatetest/index";
 
@@ -52,6 +55,9 @@ import {
     AppHeaderComponent,
     UserLoginComponent,
     HomeComponent,
+    BasicsGenerateQuestionsComponent,
+    BasicsQuestionsComponent,
+    BasicsResultsComponent,
     MultiplyComponent
   ],
   providers: [
