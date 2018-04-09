@@ -1,6 +1,8 @@
 import {  IMultiTestType, IMultiTestOperator, IMultiTestQuestion } from "./multitest.api";
 
-export class MultiTestMultiply implements IMultiTestType {
+import {  MultiTestBase} from "./multitest.base";
+
+export class MultiTestMultiply extends MultiTestBase implements IMultiTestType {
 
   public generateQuestions(cNumber: number, tQuestions: number) : IMultiTestQuestion[] {
     let counter: number = tQuestions;
@@ -39,20 +41,5 @@ export class MultiTestMultiply implements IMultiTestType {
           question.correctAnswer = (question.number1 * question.number2);
           return false;
       }
-  }
-
-  private getMultiTestQuestion(cNumber: number,numberGenerated: number): IMultiTestQuestion {
-      return {
-          "number1": cNumber,
-          "number2": numberGenerated,
-          "userAnswer": 0
-      };
-  }
-
-  private getNextSet(max: number) : number[][]  {
-      if(max > 0){
-          return [[max+1, (max+19)]];
-      }
-      return [[max+1, max+9]];
   }
 }
