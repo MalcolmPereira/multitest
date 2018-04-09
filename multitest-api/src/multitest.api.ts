@@ -1,7 +1,6 @@
 export enum IMultiTestOperator {
     MULTIPLY = "multiply",
     DIVIDE = "divide",
-    DIVIDE_DECIMAL = "divide_decimal",
     PERCENTAGE = "percentage",
     FRACTIONS_ADD = "fraction_add",
     FRACTIONS_SUB = "fraction_sub",

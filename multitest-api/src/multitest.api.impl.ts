@@ -1,8 +1,10 @@
 import { IMultiTest, IMultiTestOperator, IMultiTestType, IMultiTestChallenge, IMultiTestQuestion } from "./multitest.api";
 
 import { MultiTestMultiply } from "./multitest-multiply";
+import { MultiTestDivide } from "./multitest-divide";
 
 const multiplyTest: IMultiTestType = new  MultiTestMultiply();
+const divideTest: IMultiTestType = new  MultiTestDivide();
 
 export class MultiTestImpl implements IMultiTest {
 
@@ -38,6 +40,10 @@ export class MultiTestImpl implements IMultiTest {
       switch(cOperator){
         case IMultiTestOperator.MULTIPLY: {
           questionArr = multiplyTest.generateQuestions(cNumber,tQuestions);
+          break;
+        }
+        case IMultiTestOperator.DIVIDE: {
+          questionArr = divideTest.generateQuestions(cNumber,tQuestions);
           break;
         }
         default: {
@@ -76,6 +82,8 @@ export class MultiTestImpl implements IMultiTest {
         switch (cOperator) {
             case IMultiTestOperator.MULTIPLY:
                 return multiplyTest.validateQuestion(question);
+            case IMultiTestOperator.DIVIDE:
+                return divideTest.validateQuestion(question);
             default:
                 throw Error("Invalid not supported operator");
         }
