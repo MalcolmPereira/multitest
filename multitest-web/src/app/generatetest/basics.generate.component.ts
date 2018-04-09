@@ -20,6 +20,9 @@ export class BasicsGenerateQuestionsComponent extends BasicsComponent implements
   challengeLabel: String;
 
   @Input()
+  minNumberQuestions: number;
+
+  @Input()
   operator: IBasicsOperator = undefined;
 
   @Output()
@@ -36,7 +39,7 @@ export class BasicsGenerateQuestionsComponent extends BasicsComponent implements
   ngOnInit() {
     this.generateForm = new FormGroup ({
       challengeNumber: new FormControl(undefined,[Validators.required]),
-      totalQuestions : new FormControl(undefined,[Validators.required]),
+      totalQuestions : new FormControl(this.minNumberQuestions,[Validators.required]),
     });
   }
 

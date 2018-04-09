@@ -56,7 +56,6 @@ export class BasicsQuestionsComponent extends BasicsComponent implements OnInit 
         this.service.submitQuestions(this.basicsChallenge)
             .subscribe(
               data => {
-                console.log(data);
                 this.basicsChallenge = data;
                 this.basicsChallenge.complete = true;
                 this.basicsChallengeEvent.emit(this.basicsChallenge);

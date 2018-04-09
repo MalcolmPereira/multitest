@@ -29,8 +29,18 @@ export class BasicsResultsComponent extends BasicsComponent {
     this.basicsChallenge = undefined;
   }
 
-  cancel(){
-    this.basicsChallenge = undefined;
-    this.basicsChallengeEvent.emit(undefined);
+  tryAgain(){
+    this.isError = false;
+    this.errorMessage = "";
+    this.service.getQuestions(this.basicsChallenge.challengeNumber, this.basicsChallenge.questions.length,this.basicsChallenge.operator)
+     .subscribe(
+             data => {
+                 console.log("got data",data);
+                 this.basicsChallengeEvent.emit(data);
+             },
+             err  => {
+                 this.processError(err);
+             }
+    );
   }
 }

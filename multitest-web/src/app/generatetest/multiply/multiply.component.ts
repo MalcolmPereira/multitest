@@ -16,6 +16,8 @@ export class MultiplyComponent extends BasicsComponent {
 
   challengeLabel: String = "Multiple";
 
+  minNumberQuestions: number = 10;
+
   operator: IBasicsOperator = IBasicsOperator.MULTIPLY;
 
   basicsChallenge: IBasicsChallenge = undefined;

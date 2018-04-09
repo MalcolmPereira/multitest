@@ -19,7 +19,7 @@
              <td colspan="3">
                 <mat-form-field class="input-width">
                     <mat-label>Number of Questions</mat-label>
-                    <input matInput formControlName="totalQuestions" id="totalQuestions" type="number" step="1" min="1" max="50" required>
+                    <input matInput formControlName="totalQuestions" id="totalQuestions" value="{{minNumberQuestions}}" type="number" step="1" min="{{minNumberQuestions}}" max="50" required>
                     <mat-error>Valid Number between 1 to 50 Required</mat-error>
                 </mat-form-field>
              </td>

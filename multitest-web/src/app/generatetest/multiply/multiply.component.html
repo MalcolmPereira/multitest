@@ -1,4 +1,4 @@
 <span class="material-icons nav_back" [routerLink]="['/home']">navigate_before</span>
-<basics-generate *ngIf="!basicsChallenge" [challengeLabel]="challengeLabel" [operator]="operator" (basicsChallengeEvent)="processGenerateEvent($event)"></basics-generate>
+<basics-generate *ngIf="!basicsChallenge" [challengeLabel]="challengeLabel" [minNumberQuestions]="minNumberQuestions" [operator]="operator" (basicsChallengeEvent)="processGenerateEvent($event)"></basics-generate>
 <basics-questions *ngIf="(basicsChallenge && !basicsChallenge.complete)" [basicsChallenge]="basicsChallenge" (basicsChallengeEvent)="processChallengeEvent($event)"></basics-questions>
-<basics-results *ngIf="(basicsChallenge && basicsChallenge.complete)" [basicsChallenge]="basicsChallenge" (basicsChallengeEvent)="processChallengeEvent($event)"></basics-results>
+<basics-results *ngIf="(basicsChallenge && basicsChallenge.complete)" [basicsChallenge]="basicsChallenge" (basicsChallengeEvent)="processGenerateEvent($event)"></basics-results>

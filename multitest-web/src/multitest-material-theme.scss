@@ -24,6 +24,20 @@ html, body {
   background-color: mat-color($qme-app-primary,700);
 }
 
+.app-card-message {
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  color: mat-color($mat-grey,50);
+}
+
+.app-card-message-success{
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  color: mat-color($mat-green,500);
+}
+
 .app-card-error{
   font-size: 14px;
   font-family: Roboto, sans-serif;
@@ -120,4 +134,14 @@ html, body {
   font-size: 50px;
   color: mat-color($mat-blue,400);
   cursor: pointer
+}
+
+.check_success{
+  font-size: 30px;
+  color: mat-color($mat-green,500);
+}
+
+.check_error{
+  font-size: 30px;
+  color: mat-color($qme-app-warn);
 }

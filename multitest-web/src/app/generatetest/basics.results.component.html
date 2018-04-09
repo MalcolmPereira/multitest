@@ -1,2 +1,42 @@
-Total Correct: {{basicsChallenge.totalCorrect}}
-Total Wrong: {{basicsChallenge.totalWrong}}
+<mat-card class="app-card-basics-form">
+  <mat-card-subtitle>
+    <div *ngIf="isError" class="app-card-error">{{errorMessage}}</div>
+    <div *ngIf="!isError">
+      <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
+          <tbody>
+               <tr>
+                <td width="20%" align="left"><span class="app-card-message">Total Questions</span></td>
+                <td width="80%" align="left"><span class="app-card-message">:&nbsp;&nbsp;</span><span class="app-card-message">{{basicsChallenge.questions.length}}</span></td>
+               </tr>
+               <tr>
+                  <td width="20%" align="left"><span class="app-card-message">Total Correct</span></td>
+                  <td width="80%" align="left"><span class="app-card-message">:&nbsp;&nbsp;</span><span class="app-card-message-success">{{basicsChallenge.totalCorrect}}</span></td>
+               </tr>
+               <tr>
+                  <td width="20%" align="left"><span class="app-card-message">Total Wrong</span></td>
+                  <td width="80%" align="left"><span class="app-card-message">:&nbsp;&nbsp;</span><span class="app-card-error">{{basicsChallenge.totalWrong}}</span></td>
+               </tr>
+          </tbody>
+      </table>
+    </div>
+  </mat-card-subtitle>
+  <mat-card-content>
+      <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
+          <tbody>
+              <tr *ngFor="let question of basicsChallenge.questions">
+                  <td width="10%" align="left"><span class="app-card-message">{{question.label}}</span></td>
+                  <td width="10%" align="left"><span class="app-card-message">&nbsp;=&nbsp;&nbsp;{{question.userAnswer}}</span></td>
+                  <td width="10%" align="left" *ngIf="(question.correct)"><span class="material-icons check_success">check_circle</span></td>
+                  <td width="10%" align="left" *ngIf="(!question.correct)"><span class="material-icons check_error">error</span></td>
+                  <td width="70%" align="left" *ngIf="(question.correct)">&nbsp;</td>
+                  <td width="70%" align="left" *ngIf="(!question.correct)"><span class="app-card-message">Correct Answer&nbsp;:&nbsp;&nbsp;{{question.correctAnswer}}</span></td>
+              </tr>
+              <tr>
+                <td align="left" colspan="3">
+                   <button class="mat-button-submit" mat-button (click)="tryAgain()">Try Again</button>
+                </td>
+              </tr>
+          </tbody>
+      </table>
+  </mat-card-content>
+</mat-card>
