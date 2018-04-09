@@ -11,14 +11,14 @@ export class MultiTestMultiply implements IMultiTestType {
     const numberGeneratedList = [];
     var setCounter  = 1;
     while (counter >= 1) {
-      if(setCounter >  5) {
+      if(setCounter >  3 ) {
           setCounter  = 1;
           nextSet = this.getNextSet(max);
           min  = nextSet[0][0];
           max  = nextSet[0][1];
       }
-      const numberGenerated = Math.floor(Math.random() * (max - min + 1)) + min;
-      if (numberGeneratedList.indexOf(numberGenerated) === -1) {
+      const numberGenerated = Math.floor(Math.random() * ((Math.floor(Math.random() * (max - min + 1)) + (Math.floor(Math.random() * (max - min + 1)) + min)) - (Math.floor(Math.random() * (max - min + 1)) + min) + 1)) + (Math.floor(Math.random() * (max - min + 1)) + min);
+      if (numberGenerated > 1 && numberGeneratedList.indexOf(numberGenerated) === -1) {
           const multiTestQuestion = this.getMultiTestQuestion(cNumber,numberGenerated);
           questionArr.push(multiTestQuestion);
           numberGeneratedList.push(numberGenerated);
@@ -50,6 +50,9 @@ export class MultiTestMultiply implements IMultiTestType {
   }
 
   private getNextSet(max: number) : number[][]  {
-      return [[max+1, max+10]];
+      if(max > 0){
+          return [[max+1, (max+19)]];
+      }
+      return [[max+1, max+9]];
   }
 }
