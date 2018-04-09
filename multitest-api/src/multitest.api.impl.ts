@@ -58,8 +58,8 @@ export class MultiTestImpl implements IMultiTest {
        const currentDate = new Date();
        const startDate = new Date(multiTest.startTime);
        const diff = ( currentDate.getTime() - startDate.getTime());
-       const totalTime = Math.round(diff / 60000 );
-       multiTest.totalTime = totalTime + " minutes to answer questions";
+       const totalTime = Math.round((diff / 60000 ) * 100) / 100;
+       multiTest.totalTime = totalTime + " minute(s) to answer questions";
        multiTest.totalCorrect = 0;
        multiTest.totalWrong = 0;
        multiTest.questions.forEach((question) => {
