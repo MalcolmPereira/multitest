@@ -1,8 +1,8 @@
-import { IMultiTest, IMultiTestOperator, IMultiTestChallenge, IMultiTestQuestion } from "./multitest.api";
+import {  IMultiTestType, IMultiTestOperator, IMultiTestQuestion } from "./multitest.api";
 
-export class MultiTestMultiply {
+export class MultiTestMultiply implements IMultiTestType {
 
-  public generateMultiplyQuestions(cNumber: number, tQuestions: number) : IMultiTestQuestion[] {
+  public generateQuestions(cNumber: number, tQuestions: number) : IMultiTestQuestion[] {
     let counter: number = tQuestions;
     let nextSet = this.getNextSet(0);
     var min  = 2;
@@ -29,7 +29,7 @@ export class MultiTestMultiply {
     return questionArr;
   }
 
-  public validateMultiply(question: IMultiTestQuestion) : boolean {
+  public validateQuestion(question: IMultiTestQuestion) : boolean {
       if (question.userAnswer === (question.number1 * question.number2)) {
           question.correct = true;
           question.correctAnswer = (question.number1 * question.number2);

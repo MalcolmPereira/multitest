@@ -25,3 +25,8 @@ export interface IMultiTest {
     generateMultiTest(userName: string, challengeNumber: number, totalQuestions: number, operator: IMultiTestOperator): IMultiTestChallenge;
     validateMultiTest(multiTest: IMultiTestChallenge): IMultiTestChallenge;
 }
+
+export interface IMultiTestType {
+    generateQuestions(cNumber: number, tQuestions: number):IMultiTestQuestion[];
+    validateQuestion(question: IMultiTestQuestion) : boolean;
+}
