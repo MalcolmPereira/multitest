@@ -3,10 +3,10 @@ import { IMultiTest, IMultiTestOperator, IMultiTestType, IMultiTestChallenge, IM
 import { MultiTestMultiply } from "./multitest-multiply";
 import { MultiTestDivide } from "./multitest-divide";
 
-const multiplyTest: IMultiTestType = new  MultiTestMultiply();
-const divideTest: IMultiTestType = new  MultiTestDivide();
-
 export class MultiTestImpl implements IMultiTest {
+
+    private multiplyTest: IMultiTestType = new  MultiTestMultiply();
+    private divideTest: IMultiTestType = new  MultiTestDivide();
 
     public generateMultiTest(cUserName: string, cNumber: number, tQuestions: number, cOperator: IMultiTestOperator): IMultiTestChallenge {
 
@@ -39,11 +39,11 @@ export class MultiTestImpl implements IMultiTest {
 
       switch(cOperator){
         case IMultiTestOperator.MULTIPLY: {
-          questionArr = multiplyTest.generateQuestions(cNumber,tQuestions);
+          questionArr = this.multiplyTest.generateQuestions(cNumber,tQuestions);
           break;
         }
         case IMultiTestOperator.DIVIDE: {
-          questionArr = divideTest.generateQuestions(cNumber,tQuestions);
+          questionArr = this.divideTest.generateQuestions(cNumber,tQuestions);
           break;
         }
         default: {
@@ -81,9 +81,9 @@ export class MultiTestImpl implements IMultiTest {
     private validateQuestion(question: IMultiTestQuestion, cOperator: IMultiTestOperator): boolean {
         switch (cOperator) {
             case IMultiTestOperator.MULTIPLY:
-                return multiplyTest.validateQuestion(question);
+                return this.multiplyTest.validateQuestion(question);
             case IMultiTestOperator.DIVIDE:
-                return divideTest.validateQuestion(question);
+                return this.divideTest.validateQuestion(question);
             default:
                 throw Error("Invalid not supported operator");
         }

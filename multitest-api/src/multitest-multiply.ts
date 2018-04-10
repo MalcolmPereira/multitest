@@ -6,23 +6,23 @@ export class MultiTestMultiply extends MultiTestBase implements IMultiTestType {
 
   public generateQuestions(cNumber: number, tQuestions: number) : IMultiTestQuestion[] {
     let counter: number = tQuestions;
-    let nextSet = this.getNextSet(0);
-    var min  = 2;
-    var max  = nextSet[0][1];
-    const questionArr = new Array<IMultiTestQuestion>();
-    const numberGeneratedList = [];
-    var setCounter  = 1;
+    let nextSet:number[][] = this.getNextSet(0);
+    let min:number  = 2;
+    let max:number  = nextSet[0][1];
+    const questionArr:IMultiTestQuestion[] = [];
+    const numberGeneratedList:number[] = [];
+    let setCounter:number  = 1;
+    let jumpSet:number = (tQuestions > 10) ? 3 : 5;
     while (counter >= 1) {
-      if(setCounter >  3 ) {
-          setCounter  = 1;
+      if(setCounter >  jumpSet ) {
+          setCounter = 1;
           nextSet = this.getNextSet(max);
           min  = nextSet[0][0];
           max  = nextSet[0][1];
       }
-      const numberGenerated = Math.floor(Math.random() * ((Math.floor(Math.random() * (max - min + 1)) + (Math.floor(Math.random() * (max - min + 1)) + min)) - (Math.floor(Math.random() * (max - min + 1)) + min) + 1)) + (Math.floor(Math.random() * (max - min + 1)) + min);
+      let numberGenerated:number = Math.floor(Math.random() * ((Math.floor(Math.random() * (max - min + 1)) + (Math.floor(Math.random() * (max - min + 1)) + min)) - (Math.floor(Math.random() * (max - min + 1)) + min) + 1)) + (Math.floor(Math.random() * (max - min + 1)) + min);
       if (numberGenerated > 1 && numberGeneratedList.indexOf(numberGenerated) === -1) {
-          const multiTestQuestion = this.getMultiTestQuestion(cNumber,numberGenerated);
-          questionArr.push(multiTestQuestion);
+          questionArr.push(this.getMultiTestQuestion(cNumber,numberGenerated));
           numberGeneratedList.push(numberGenerated);
           counter--;
           setCounter++;
