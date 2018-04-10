@@ -4,18 +4,18 @@
     <div *ngIf="!isError">
       <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
           <tbody>
-               <tr>
-                <td width="20%" align="left"><span class="app-card-message">Total Questions</span></td>
-                <td width="80%" align="left"><span class="app-card-message">:&nbsp;&nbsp;</span><span class="app-card-message">{{basicsChallenge.questions.length}}</span></td>
-               </tr>
-               <tr>
+                <tr>
+                  <td width="20%" align="left"><span class="app-card-message">Total Time </span></td>
+                  <td width="80%" align="left"><span class="app-card-message">:&nbsp;&nbsp;{{basicsChallenge.totalTime}}</span></td>
+                </tr>
+                <tr>
                   <td width="20%" align="left"><span class="app-card-message">Total Correct</span></td>
                   <td width="80%" align="left"><span class="app-card-message">:&nbsp;&nbsp;</span><span class="app-card-message-success">{{basicsChallenge.totalCorrect}}</span></td>
-               </tr>
-               <tr>
+                </tr>
+                <tr>
                   <td width="20%" align="left"><span class="app-card-message">Total Wrong</span></td>
                   <td width="80%" align="left"><span class="app-card-message">:&nbsp;&nbsp;</span><span class="app-card-error">{{basicsChallenge.totalWrong}}</span></td>
-               </tr>
+                </tr>
           </tbody>
       </table>
     </div>
