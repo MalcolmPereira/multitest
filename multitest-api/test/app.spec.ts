@@ -8,7 +8,7 @@ describe("app", () => {
 
   it("Get Multiply", () =>
     supertest(app)
-      .get("/multiply?name=someuser&challengeNumber=2&totalQuestions=10&operator=multiply")
+      .get("/basics?name=someuser&challengeNumber=2&totalQuestions=10&operator=multiply")
       .expect("Content-Type", /json/)
       .expect(200)
       .expect(function(res){
@@ -26,7 +26,7 @@ describe("app", () => {
 
   it("Get Multiply - Error ", () =>
     supertest(app)
-      .get("/multiply")
+      .get("/basics")
       .expect("Content-Type", /json/)
       .expect(500)
       .expect(function(res){
@@ -37,7 +37,7 @@ describe("app", () => {
 
   it("Get Multiply - Error Challenge Number ", () =>
     supertest(app)
-      .get("/multiply?name=someuser")
+      .get("/basics?name=someuser")
       .expect("Content-Type", /json/)
       .expect(500)
       .expect(function(res){
@@ -48,7 +48,7 @@ describe("app", () => {
 
   it("Get Multiply - Error Operator ", () =>
     supertest(app)
-      .get("/multiply?name=someuser&challengeNumber=2&totalQuestions=10")
+      .get("/basics?name=someuser&challengeNumber=2&totalQuestions=10")
       .expect("Content-Type", /json/)
       .expect(500)
       .expect(function(res){
@@ -59,7 +59,7 @@ describe("app", () => {
 
   it("Get Multiply Total Questions Less Than 10", () =>
     supertest(app)
-      .get("/multiply?name=someuser&challengeNumber=2&totalQuestions=5&operator=multiply")
+      .get("/basics?name=someuser&challengeNumber=2&totalQuestions=5&operator=multiply")
       .expect("Content-Type", /json/)
       .expect(200)
       .expect(function(res){
@@ -77,7 +77,7 @@ describe("app", () => {
 
   it("Get Multiply Total Questions Greater Than 50", () =>
     supertest(app)
-      .get("/multiply?name=someuser&challengeNumber=2&totalQuestions=100&operator=multiply")
+      .get("/basics?name=someuser&challengeNumber=2&totalQuestions=100&operator=multiply")
       .expect("Content-Type", /json/)
       .expect(200)
       .expect(function(res){
@@ -95,7 +95,7 @@ describe("app", () => {
 
   it("Post Multiply", () =>
    supertest(app)
-     .post("/multiply")
+     .post("/basics")
      .send({
                 "challengeNumber": 2,
                 "operator": "multiply",
