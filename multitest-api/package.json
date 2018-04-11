@@ -4,7 +4,7 @@
   "description": "Mutli Test REST API",
   "author": "malcolm.j.pereira@gmail.com",
   "license": "Apache-2.0",
-  "main": "dist/index.js",
+  "main": "build/multi-test-api.js",
   "scripts": {
     "dev": "tsc --watch & nodemon dist/src",
     "test": "npm run lint && npm run tsc && mocha dist/**/*.spec.js",
@@ -16,7 +16,8 @@
     "start": "npm run serve",
     "serve": "node dist/src/index.js",
     "serve-debug": "nodemon --inspect dist/src/index.js",
-    "watch-node": "nodemon dist/src"
+    "watch-node": "nodemon dist/src",
+    "postinstall": "npm run tsc && npm run webpack"
   },
   "dependencies": {
     "all": "0.0.0",
