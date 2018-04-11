@@ -16,14 +16,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/multiply?name=someuser&challengeNumber=2&totalQuestions=10&operator=multiply",
+					"raw": "http://localhost:3000/basics?name=someuser&challengeNumber=2&totalQuestions=10&operator=multiply",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"multiply"
+						"basics"
 					],
 					"query": [
 						{
@@ -49,6 +49,30 @@
 			"response": []
 		},
 		{
+			"name": "Multiply-GetQuestionsError",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/basics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"basics"
+					]
+				},
+				"description": "Multi-Test Get Questions"
+			},
+			"response": []
+		},
+		{
 			"name": "Multiply-PostQuestions",
 			"request": {
 				"method": "POST",
@@ -63,14 +87,152 @@
 					"raw": "{\r\n\t\"challengeNumber\": 2,\r\n\t\"operator\": \"multiply\",\r\n\t\"questions\": [\r\n\t\t\t{\"number1\": 2,\"number2\": 2,\"userAnswer\": 4},\r\n\t\t\t{\"number1\": 2,\"number2\": 3,\"userAnswer\": 6},\r\n\t\t\t{\"number1\": 2,\"number2\": 4,\"userAnswer\": 8},\r\n\t\t\t{\"number1\": 2,\"number2\": 5,\"userAnswer\": 10},\r\n\t\t\t{\"number1\": 2,\"number2\": 6,\"userAnswer\": 12},\r\n\t\t\t{\"number1\": 2,\"number2\": 7,\"userAnswer\": 14},\r\n\t\t\t{\"number1\": 2,\"number2\": 8,\"userAnswer\": 14},\r\n\t\t\t{\"number1\": 2,\"number2\": 9,\"userAnswer\": 14},\r\n\t\t\t{\"number1\": 2,\"number2\": 10,\"userAnswer\": 14},\r\n\t\t\t{\"number1\": 2,\"number2\": 11,\"userAnswer\": 14}\r\n\t],\r\n\t\"startTime\": \"2018-03-20T23:44:22.184Z\",\r\n\t\"userName\": \"someuser\"\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/multiply",
+					"raw": "http://localhost:3000/basics",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"multiply"
+						"basics"
+					]
+				},
+				"description": "Multi-Test Get Questions"
+			},
+			"response": []
+		},
+		{
+			"name": "Divide-GetQuestions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/basics?name=someuser&challengeNumber=2&totalQuestions=10&operator=divide",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"basics"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "someuser"
+						},
+						{
+							"key": "challengeNumber",
+							"value": "2"
+						},
+						{
+							"key": "totalQuestions",
+							"value": "10"
+						},
+						{
+							"key": "operator",
+							"value": "divide"
+						}
+					]
+				},
+				"description": "Multi-Test Get Questions"
+			},
+			"response": []
+		},
+		{
+			"name": "Divide-PostQuestions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"challengeNumber\": 2,\r\n\t\"operator\": \"divide\",\r\n\t\"questions\": [\r\n\t\t{\"number1\": 16,\"number2\": 2,\"userAnswer\": 8},\r\n\t\t{\"number1\": 10,\"number2\": 2,\"userAnswer\": 5},\r\n\t\t{\"number1\": 18,\"number2\": 2,\"userAnswer\": 9},\r\n\t\t{\"number1\": 38,\"number2\": 2,\"userAnswer\": 19},\r\n\t\t{\"number1\": 36,\"number2\": 2,\"userAnswer\": 18},\r\n\t\t{\"number1\": 60,\"number2\": 2,\"userAnswer\": 30},\r\n\t\t{\"number1\": 92,\"number2\": 2,\"userAnswer\": 0},\r\n\t\t{\"number1\": 112,\"number2\": 2,\"userAnswer\": 0},\r\n\t\t{\"number1\": 84,\"number2\": 2,\"userAnswer\": 0},\r\n\t\t{\"number1\": 114,\"number2\": 2,\"userAnswer\": 0}\r\n\t],\r\n\t\"startTime\": \"2018-04-11T15:04:27.691Z\",\r\n\t\"userName\": \"someuser\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/basics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"basics"
+					]
+				},
+				"description": "Multi-Test Get Questions"
+			},
+			"response": []
+		},
+		{
+			"name": "Percent-GetQuestions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/basics?name=someuser&totalQuestions=10&operator=percentage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"basics"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "someuser"
+						},
+						{
+							"key": "totalQuestions",
+							"value": "10"
+						},
+						{
+							"key": "operator",
+							"value": "percentage"
+						}
+					]
+				},
+				"description": "Multi-Test Get Questions"
+			},
+			"response": []
+		},
+		{
+			"name": "Percent-PostQuestions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"challengeNumber\": 2,\r\n\t\"operator\": \"percentage\",\r\n\t\"questions\": [\r\n\t\t{\"number1\": 2,\"number2\": 900,\"userAnswer\": 0},\r\n\t\t{\"number1\": 12,\"number2\": 200,\"userAnswer\": 0},\r\n\t\t{\"number1\": 6,\"number2\": 1200,\"userAnswer\": 0},\r\n\t\t{\"number1\": 8,\"number2\": 500,\"userAnswer\": 0},\r\n\t\t{\"number1\": 7,\"number2\": 800,\"userAnswer\": 0},\r\n\t\t{\"number1\": 65,\"number2\": 277,\"userAnswer\": 0},\r\n\t\t{\"number1\": 96,\"number2\": 165,\"userAnswer\": 0},\r\n\t\t{\"number1\": 30,\"number2\": 201,\"userAnswer\": 0},\r\n\t\t{\"number1\": 6,\"number2\": 230,\"userAnswer\": 0},\r\n\t\t{\"number1\": 69,\"number2\": 123,\"userAnswer\": 0}\r\n\t],\r\n\t\"startTime\": \"2018-04-11T15:04:27.691Z\",\r\n\t\"userName\": \"someuser\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/basics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"basics"
 					]
 				},
 				"description": "Multi-Test Get Questions"
