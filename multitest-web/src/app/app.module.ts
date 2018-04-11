@@ -33,6 +33,8 @@ import {
 
 import {
   MultiplyComponent,
+  DivideComponent,
+  PercentageComponent,
   BasicsGenerateQuestionsComponent,
   BasicsQuestionsComponent,
   BasicsResultsComponent,
@@ -58,7 +60,9 @@ import {
     BasicsGenerateQuestionsComponent,
     BasicsQuestionsComponent,
     BasicsResultsComponent,
-    MultiplyComponent
+    MultiplyComponent,
+    DivideComponent,
+    PercentageComponent
   ],
   providers: [
       { provide: APP_CONFIG, useValue: AppConfig},

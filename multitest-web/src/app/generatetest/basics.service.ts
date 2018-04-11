@@ -25,12 +25,12 @@ export class BasicsService {
     }
 
     getQuestions(challengeNumber: number, totalQuestions: number, operator: IBasicsOperator) : Observable<IBasicsChallenge>  {
-        let API_URL = this.config.MULTIPLY_SERVICE+"?"+this.NAME+"="+this.userService.getCurrentUser().name+"&"+this.CHALLENGE_NUMBER+"="+challengeNumber+"&"+this.TOTAL_QUESTIONS+"="+totalQuestions+"&"+this.OPERATOR+"="+operator;
+        let API_URL = this.config.BASICS_SERVICE+"?"+this.NAME+"="+this.userService.getCurrentUser().name+"&"+this.CHALLENGE_NUMBER+"="+challengeNumber+"&"+this.TOTAL_QUESTIONS+"="+totalQuestions+"&"+this.OPERATOR+"="+operator;
         return this.http.get<IBasicsChallenge>(API_URL);
     }
 
     submitQuestions(challenge: IBasicsChallenge) : Observable<IBasicsChallenge> {
-        return this.http.post<IBasicsChallenge>(this.config.MULTIPLY_SERVICE,challenge, httpOptions);
+        return this.http.post<IBasicsChallenge>(this.config.BASICS_SERVICE,challenge, httpOptions);
     }
 
 }

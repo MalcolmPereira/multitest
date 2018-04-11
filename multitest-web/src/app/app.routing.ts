@@ -3,14 +3,16 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { HomeComponent } from "./home/index";
 import { UserLoginComponent } from "./user/index";
-import { MultiplyComponent } from "./generatetest/index";
+import { MultiplyComponent,DivideComponent,PercentageComponent } from "./generatetest/index";
 
 
 export const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
   { path: "login", component: UserLoginComponent },
   { path: "home", component: HomeComponent },
-  { path: "multiply", component: MultiplyComponent }
+  { path: "multiply", component: MultiplyComponent },
+  { path: "divide", component: DivideComponent },
+  { path: "percent", component: PercentageComponent }
 ];
 
 @NgModule({

@@ -1,5 +1,11 @@
 export enum IBasicsOperator {
-    MULTIPLY = "multiply"
+    MULTIPLY = "multiply",
+    DIVIDE = "divide",
+    PERCENTAGE = "percentage",
+    FRACTIONS_ADD = "fraction_add",
+    FRACTIONS_SUB = "fraction_sub",
+    FRACTIONS_MULTIPLY = "fraction_multiply",
+    FRACTIONS_DIVIDE = "fraction_divide"
 }
 
 export interface IBasicsChallenge {

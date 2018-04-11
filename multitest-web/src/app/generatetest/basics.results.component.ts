@@ -35,7 +35,6 @@ export class BasicsResultsComponent extends BasicsComponent {
     this.service.getQuestions(this.basicsChallenge.challengeNumber, this.basicsChallenge.questions.length,this.basicsChallenge.operator)
      .subscribe(
              data => {
-                 console.log("got data",data);
                  this.basicsChallengeEvent.emit(data);
              },
              err  => {

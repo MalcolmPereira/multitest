@@ -6,7 +6,7 @@
     <form [formGroup]="generateForm" autocomplete="off" novalidate>
       <table class="app-full-width" cellspacing="3" cellpadding="3" border="0">
         <tbody>
-           <tr>
+           <tr *ngIf="challengeLabel">
              <td colspan="3">
                 <mat-form-field class="input-width">
                     <mat-label>{{challengeLabel}}</mat-label>

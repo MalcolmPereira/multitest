@@ -1,4 +1,6 @@
 export * from "./multiply/index";
+export * from "./divide/index";
+export * from "./percent/index";
 export * from "./basics.model";
 export * from "./basics.service";
 export * from "./basics.component";

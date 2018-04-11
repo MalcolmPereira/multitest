@@ -17,7 +17,7 @@ import { BasicsService } from "./basics.service";
 export class BasicsGenerateQuestionsComponent extends BasicsComponent implements OnInit {
 
   @Input()
-  challengeLabel: String;
+  challengeLabel: String = undefined;
 
   @Input()
   minNumberQuestions: number;
@@ -37,10 +37,18 @@ export class BasicsGenerateQuestionsComponent extends BasicsComponent implements
   }
 
   ngOnInit() {
-    this.generateForm = new FormGroup ({
-      challengeNumber: new FormControl(undefined,[Validators.required]),
-      totalQuestions : new FormControl(this.minNumberQuestions,[Validators.required]),
-    });
+    if(this.operator === IBasicsOperator.PERCENTAGE){
+      this.generateForm = new FormGroup ({
+        challengeNumber: new FormControl(0),
+        totalQuestions : new FormControl(this.minNumberQuestions,[Validators.required]),
+      });
+    }else{
+      this.generateForm = new FormGroup ({
+        challengeNumber: new FormControl(undefined,[Validators.required]),
+        totalQuestions : new FormControl(this.minNumberQuestions,[Validators.required]),
+      });
+    }
+
   }
 
   cancel(){
