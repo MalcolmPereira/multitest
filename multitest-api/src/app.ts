@@ -23,7 +23,7 @@ class App {
 
         const router = express.Router();
 
-        router.route("/multiply")
+        router.route("/basics")
               .get((req, res) => {
                     const name = req.query.name;
                     const challengeNumber = parseInt(req.query.challengeNumber);

@@ -2,18 +2,20 @@ import { IMultiTest, IMultiTestOperator, IMultiTestType, IMultiTestChallenge, IM
 
 import { MultiTestMultiply } from "./multitest-multiply";
 import { MultiTestDivide } from "./multitest-divide";
+import { MultiTestPercent } from "./multitest-percent";
 
 export class MultiTestImpl implements IMultiTest {
 
     private multiplyTest: IMultiTestType = new  MultiTestMultiply();
     private divideTest: IMultiTestType = new  MultiTestDivide();
+    private percentTest: IMultiTestType = new  MultiTestPercent();
 
     public generateMultiTest(cUserName: string, cNumber: number, tQuestions: number, cOperator: IMultiTestOperator): IMultiTestChallenge {
 
       if(!cUserName){
         throw new Error("Valid User Name Required");
       }
-      if(!cNumber){
+      if(!cNumber && cOperator !== IMultiTestOperator.PERCENTAGE){
           throw new Error("Valid Challenge Number Required");
       }
       if(!cOperator){
@@ -46,6 +48,10 @@ export class MultiTestImpl implements IMultiTest {
           questionArr = this.divideTest.generateQuestions(cNumber,tQuestions);
           break;
         }
+        case IMultiTestOperator.PERCENTAGE: {
+          questionArr = this.percentTest.generateQuestions(cNumber,tQuestions);
+          break;
+        }
         default: {
           throw new Error("Valid Operator Required");
         }
@@ -65,10 +71,10 @@ export class MultiTestImpl implements IMultiTest {
        const startDate = new Date(multiTest.startTime);
        const diff = ( currentDate.getTime() - startDate.getTime());
        const totalTime = Math.round((diff / 60000 ) * 100) / 100;
-       multiTest.totalTime = totalTime + " minute(s) to answer "+multiTest.questions+" questions";
+       multiTest.totalTime = totalTime + " minute(s) to answer "+multiTest.questions.length+" questions";
        multiTest.totalCorrect = 0;
        multiTest.totalWrong = 0;
-  +  +" multiTest.+u stions "+.forEach((question) => {
+       multiTest.questions.forEach((question) => {
             if(this.validateQuestion(question,multiTest.operator)){
                 multiTest.totalCorrect++;
             }else{
@@ -84,6 +90,8 @@ export class MultiTestImpl implements IMultiTest {
                 return this.multiplyTest.validateQuestion(question);
             case IMultiTestOperator.DIVIDE:
                 return this.divideTest.validateQuestion(question);
+            case IMultiTestOperator.PERCENTAGE:
+                return this.percentTest.validateQuestion(question);
             default:
                 throw Error("Invalid not supported operator");
         }
