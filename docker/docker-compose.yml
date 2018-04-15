@@ -1,0 +1,11 @@
+version: '3'
+services:
+  multitestapi:
+    image: "multitest-api"
+    ports:
+     - "3000:3000"
+  multitestweb:
+    image: "multitest-web"
+    ports:
+     - "8080:80"
+     - "8443:443"
