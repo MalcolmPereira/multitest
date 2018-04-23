@@ -1,5 +1,5 @@
 #! /bin/sh
 cd api
-build.sh
+./build.sh
 cd ../web
-build.sh
+./build.sh
